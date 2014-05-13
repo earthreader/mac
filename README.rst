@@ -1,6 +1,9 @@
 Earth Reader for Mac
 ====================
 
+.. image:: screenshot.png
+   :alt: Current status
+
 `Earth Reader`_ is a news reader that runs on various devices and
 is synchronized without any particular centralized proprietary
 services.
