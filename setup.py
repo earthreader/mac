@@ -21,10 +21,10 @@ setup_requires = [
 ]
 
 install_requires = [
-    'libearth >= 0.2.0',
-    'pyobjc >= 2.5.1',
-    'pyobjc-framework-Cocoa >= 2.5.1',
-    'pyobjc-framework-WebKit >= 2.5.1'
+    'libearth == 0.2.0',
+    'pyobjc == 2.5.1',
+    'pyobjc-framework-Cocoa == 2.5.1',
+    'pyobjc-framework-WebKit == 2.5.1'
 ]
 
 
