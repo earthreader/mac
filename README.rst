@@ -10,6 +10,7 @@ services.
 
 Earth Reader for Mac is a native Mac app of Earth Reader.
 
-Licensed under GPLv3 or later.
+Licensed under GPLv3_ or later.
 
 .. _Earth Reader: http://earthreader.org/
+.. _GPLv3: http://www.gnu.org/licenses/gpl-3.0.html
