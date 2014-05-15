@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="subscriptions.css">
+  </head>
+  <body>
+    <div>
+      <ul class="categories">
+        {% for category in subscriptions if category.children %}
+        <li class="category">{{ category.label }}</li>
+        {% endfor %}
+      </ul>
+      <ul class="subscriptions">
+        {% for subscription in subscriptions if not subscription.children %}
+        <li class="subscription">{{ subscription.label }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

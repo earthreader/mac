@@ -9,11 +9,14 @@ import uuid
 
 from AppKit import (NSApp, NSApplication, NSBorderlessWindowMask,
                     NSSegmentedControl, NSWindow, NSWindowController)
+from Foundation import NSURL
 from libearth.repository import FileSystemRepository
 from libearth.session import Session
 from libearth.stage import Stage
 from objc import IBAction, IBOutlet
 from WebKit import WebView  # noqa
+
+from .tpl import render_template
 
 __all__ = 'MainController',
 
@@ -44,6 +47,7 @@ class MainController(NSWindowController):
 
     def awakeFromNib(self):
         logger.debug('%r awakeFromNib', self)
+        self.renderSubscriptions()
 
     def windowWillClose_(self, notification):
         # see comment in self.initWithObject_()
@@ -69,6 +73,15 @@ class MainController(NSWindowController):
         logger.debug('%r setFilterWithSender:%r', self, sender)
         logger.debug('%r selectedSegment => %r',
                      sender, sender.selectedSegment())
+
+    def renderSubscriptions(self):
+        html = render_template('subscriptions.html',
+                               subscriptions=self.subscriptions)
+        frame = self.entryListView.mainFrame()
+        baseUrl = NSURL.URLWithString_(
+            'file://' + os.path.dirname(__file__) + '/static/'
+        )
+        frame.loadHTMLString_baseURL_(html, baseUrl)
 
 
 def main():

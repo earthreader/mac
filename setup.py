@@ -24,7 +24,8 @@ install_requires = [
     'libearth == 0.2.0',
     'pyobjc == 2.5.1',
     'pyobjc-framework-Cocoa == 2.5.1',
-    'pyobjc-framework-WebKit == 2.5.1'
+    'pyobjc-framework-WebKit == 2.5.1',
+    'Jinja2 == 2.7.2'
 ]
 
 
@@ -64,7 +65,6 @@ setup(
         'Operating System :: MacOS :: MacOS X',
         'Programming Language :: Objective C',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: Implementation :: CPython',

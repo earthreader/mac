@@ -23,17 +23,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="884" height="539"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <webView canDrawConcurrently="YES" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-oz-d69">
-                        <rect key="frame" x="264" y="0.0" width="620" height="539"/>
+                    <webView canDrawConcurrently="YES" ambiguous="YES" misplaced="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VH-oz-d69">
+                        <rect key="frame" x="239" y="0.0" width="645" height="539"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
                             <nil key="identifier"/>
                         </webPreferences>
                     </webView>
-                    <webView canDrawConcurrently="YES" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KvD-eB-S2c">
-                        <rect key="frame" x="0.0" y="0.0" width="264" height="539"/>
+                    <webView canDrawConcurrently="YES" ambiguous="YES" misplaced="YES" maintainsBackForwardList="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvD-eB-S2c">
+                        <rect key="frame" x="0.0" y="0.0" width="239" height="539"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12"/>
+                        <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" javaEnabled="NO" javaScriptCanOpenWindowsAutomatically="NO">
+                            <nil key="identifier"/>
+                        </webPreferences>
                     </webView>
                 </subviews>
                 <constraints>
