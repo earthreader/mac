@@ -3,8 +3,8 @@
   <head>
     <link rel="stylesheet" type="text/css" href="subscriptions.css">
   </head>
-  <body>
-    <div>
+  <body class="active">
+    <div class="depth">
       <ul class="categories">
         {% for category in subscriptions if category.children %}
         <li class="category">{{ category.label }}</li>

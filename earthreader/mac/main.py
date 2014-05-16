@@ -7,8 +7,11 @@ import os
 import os.path
 import uuid
 
-from AppKit import (NSApp, NSApplication, NSBorderlessWindowMask,
-                    NSSegmentedControl, NSWindow, NSWindowController)
+from AppKit import (NSApp, NSApplication,
+                    NSApplicationDidBecomeActiveNotification,
+                    NSApplicationDidResignActiveNotification,
+                    NSNotificationCenter, NSSegmentedControl,
+                    NSWindowController)
 from Foundation import NSURL
 from libearth.repository import FileSystemRepository
 from libearth.session import Session
@@ -48,6 +51,29 @@ class MainController(NSWindowController):
     def awakeFromNib(self):
         logger.debug('%r awakeFromNib', self)
         self.renderSubscriptions()
+        center = NSNotificationCenter.defaultCenter()
+        center.addObserver_selector_name_object_(
+            self, 'applicationDidBecomeActive:',
+            NSApplicationDidBecomeActiveNotification,
+            None
+        )
+        center.addObserver_selector_name_object_(
+            self, 'applicationDidResignActive:',
+            NSApplicationDidResignActiveNotification,
+            None
+        )
+
+    def applicationDidBecomeActive_(self, notification):
+        logger.debug('%r applicationDidBecomeActive:%r', self, notification)
+        self.entryListView.mainFrame().windowObject().evaluateWebScript_(
+            "document.body.classList.add('active')"
+        )
+
+    def applicationDidResignActive_(self, notification):
+        logger.debug('%r applicationDidResignActive:%r', self, notification)
+        self.entryListView.mainFrame().windowObject().evaluateWebScript_(
+            "document.body.classList.remove('active')"
+        )
 
     def windowWillClose_(self, notification):
         # see comment in self.initWithObject_()
