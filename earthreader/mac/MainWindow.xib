@@ -84,12 +84,12 @@
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="BBC3C045-2CE8-4599-BE09-4BBFAB711E78" label="Filter" paletteLabel="Filter" id="2yF-Wc-0PG">
                         <nil key="toolTip"/>
-                        <size key="minSize" width="104" height="28"/>
+                        <size key="minSize" width="100" height="28"/>
                         <size key="maxSize" width="104" height="28"/>
                         <segmentedControl key="view" verticalHuggingPriority="750" id="i3J-f1-wZB">
-                            <rect key="frame" x="0.0" y="14" width="104" height="28"/>
+                            <rect key="frame" x="0.0" y="14" width="100" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <segmentedCell key="cell" alignment="left" style="texturedRounded" trackingMode="selectOne" id="KsO-kC-qrl">
+                            <segmentedCell key="cell" alignment="left" style="texturedSquare" trackingMode="selectOne" id="KsO-kC-qrl">
                                 <font key="font" metaFont="system"/>
                                 <segments>
                                     <segment label="★" width="32"/>
