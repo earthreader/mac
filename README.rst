@@ -14,7 +14,7 @@ You can run it by the following instruction:
 
 .. code-block:: bash
 
-   $ python3 setup.py py2app
+   $ python3 setup.py py2app -A
    $ dist/Earth\ Reader.app/Contents/MacOS/Earth\ Reader
 
 Licensed under GPLv3_ or later.
