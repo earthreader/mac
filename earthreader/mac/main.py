@@ -138,8 +138,13 @@ class MainController(NSWindowController):
             )
 
     def renderSubscriptions(self):
+        default_icon_src = os.path.join(
+            os.path.dirname(__file__),
+            'default-subscription-icon.svg'
+        )
         renderTemplate(self.entryListView, 'subscriptions.html',
-                       subscriptions=self.subscriptions)
+                       subscriptions=self.subscriptions,
+                       default_icon_src=default_icon_src)
 
 
 def renderTemplate(webView: WebView, name: str, **values):

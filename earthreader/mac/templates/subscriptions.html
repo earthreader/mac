@@ -12,7 +12,11 @@
       </ul>
       <ul class="subscriptions">
         {% for subscription in subscriptions if not subscription.children %}
-        <li class="subscription">{{ subscription.label }}</li>
+        <li class="subscription">
+          <img src="{{ subscription.icon_uri or default_icon_src }}"
+               width="16" height="16">
+          {{ subscription.label }}
+        </li>
         {% endfor %}
       </ul>
     </div>
