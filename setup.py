@@ -45,10 +45,12 @@ setup(
         'py2app': {
             'iconfile': 'icon.ics',
             'frameworks': 'WebKit',
+            'resources': 'earthreader/mac/static',
             'plist': {
                 'CFBundleName': 'Earth Reader',
                 'CFBundleIdentifier': 'org.earthreader.mac.EarthReader'
-            }
+            },
+            'use_faulthandler': True
         }
     },
     setup_requires=setup_requires,

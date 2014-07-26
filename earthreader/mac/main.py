@@ -138,20 +138,18 @@ class MainController(NSWindowController):
             )
 
     def renderSubscriptions(self):
-        default_icon_src = os.path.join(
-            os.path.dirname(__file__),
-            'default-subscription-icon.svg'
-        )
         renderTemplate(self.entryListView, 'subscriptions.html',
-                       subscriptions=self.subscriptions,
-                       default_icon_src=default_icon_src)
+                       subscriptions=self.subscriptions)
 
 
 def renderTemplate(webView: WebView, name: str, **values):
     html = render_template(name, **values)
     frame = webView.mainFrame()
-    baseUrl = NSURL.URLWithString_('file://' + os.path.dirname(__file__) +
-                                   '/static/')
+    resource_path = os.environ.get('RESOURCEPATH', os.path.dirname(__file__))
+    logger.debug('resource_path = %r', resource_path)
+    baseUrl = NSURL.fileURLWithPath_(
+        os.path.join(resource_path, 'static', '')
+    )
     frame.loadHTMLString_baseURL_(html, baseUrl)
 
 

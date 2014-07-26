@@ -13,7 +13,8 @@
       <ul class="subscriptions">
         {% for subscription in subscriptions if not subscription.children %}
         <li class="subscription">
-          <img src="{{ subscription.icon_uri or default_icon_src }}"
+          <img src="{{ subscription.icon_uri or
+                       'default-subscription-icon.svg' }}"
                width="16" height="16">
           {{ subscription.label }}
         </li>
